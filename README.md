@@ -97,6 +97,8 @@ as react and after that reach router v7, and after that agree for GitHub reposit
 that it will load some files. After completing that write this command in terminal to run the project
 "npm run dev". Another command for tailwind css "npm install -D tw-animate-css". It is for creating cool css animations.
 "npm install clsx tailwind-merge pdfjs-dist zustand".
+For uploading pdf files I used REACT dropzone https://www.npmjs.com/package/react-dropzone.
+https://docs.puter.com/FS/upload/ puter.js 
 
 There are multiple files (For what purpose)
 1) vite.config.ts: This file contains vite configuration for the project,
@@ -108,3 +110,4 @@ and we also have 3 plugins setup (tailwindcss(For styling), reactrouter(For Roun
 6) .dockerignore, .gitignore: This file is to make sure that you don't push any secret to GitHub.
 7) public: It contains all assets.
 8) node modules: It contains all of our dependencies and some additional react router metadata 
+9) 
