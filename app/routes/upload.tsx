@@ -43,7 +43,7 @@ const Upload = () => {
         const data = {
             id : uuid,
             resumePath: uploadedFile.path,
-            imageFile: uploadedImage.path,
+            imagePath: uploadedImage.path,
             companyName,
             jobTitle,
             jobDescription,
@@ -66,6 +66,8 @@ const Upload = () => {
         await kv.set(`resume${uuid}`, JSON.stringify(data));
         setStatusText('Analysis Complete, Redirecting ...');
         console.log(data);
+
+        navigate(`/resume/${uuid}`);
     }
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -79,7 +81,6 @@ const Upload = () => {
         const jobDescription = formData.get('job-description') as string;
 
         if(!file) return;
-
 
         handleAnalyze({companyName, jobTitle, jobDescription, file});
 
