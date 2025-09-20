@@ -32,8 +32,8 @@ const Resume = () => {
                 console.log('Resume data:', data);
 
                 // Validate paths exist and are files, not directories
-                if (!data.resumePath || !data.imageFile) {
-                    console.error('Missing resumePath or imageFile in data:', data);
+                if (!data.resumePath || !data.imagePath) {
+                    console.error('Missing resumePath or imagePath in data:', data);
                     return;
                 }
 
@@ -50,10 +50,10 @@ const Resume = () => {
                     const resumeUrl = URL.createObjectURL(pdfBlob);
                     setResumeUrl(resumeUrl);
 
-                    console.log('Attempting to read image from:', data.imageFile);
-                    const imageBlob = await fs.read(data.imageFile);
+                    console.log('Attempting to read image from:', data.imagePath);
+                    const imageBlob = await fs.read(data.imagePath);
                     if(!imageBlob) {
-                        console.error('Image blob not found at:', data.imageFile);
+                        console.error('Image blob not found at:', data.imagePath);
                         return;
                     }
 
@@ -65,7 +65,7 @@ const Resume = () => {
                 } catch (readError) {
                     console.error('Error reading files:', readError);
                     console.error('Resume path:', data.resumePath);
-                    console.error('Image path:', data.imageFile);
+                    console.error('Image path:', data.imagePath);
                     
                     // Check if the error is specifically about reading a directory
                     if (readError.code === 'cannot_read_a_directory') {
