@@ -2,6 +2,7 @@ import type {Route} from "./+types/home";
 import Navbar from "~/components/Navbar";
 import ResumeCard from "../../constants/ResumeCard";
 import {usePuterStore} from "~/lib/puter";
+import {resumes} from "../../constants";
 import {Link, useNavigate} from "react-router";
 import {useEffect, useState} from "react";
 import React from "react";

@@ -110,4 +110,3 @@ and we also have 3 plugins setup (tailwindcss(For styling), reactrouter(For Roun
 6) .dockerignore, .gitignore: This file is to make sure that you don't push any secret to GitHub.
 7) public: It contains all assets.
 8) node modules: It contains all of our dependencies and some additional react router metadata 
-9) 
